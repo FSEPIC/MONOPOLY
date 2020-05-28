@@ -15,7 +15,7 @@ namespace DaFuWeng
                     EventOne(m, i);
                     break;
                 case 8:
-                    //
+                    allEvent1(m);
                     break;
                 case 13:
                     //
@@ -34,13 +34,13 @@ namespace DaFuWeng
             m.LocationUP(1, i);
 
         }
-        public void allEvent1(Player[] players)     //所有玩家后退两个格子
+        public void allEvent1(Map m)     //所有玩家后退两个格子
         {
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < m.PlayerNum; i++)
             {
-                if (players[i].Health > 0)
+                if (m.p[i].Health > 0)
                 {
-                    players[i].Location = (players[i].Location - 2) % 36;
+                    m.p[i].Location = (m.p[i].Location - 2) % 36;
                 }
             }
         }
