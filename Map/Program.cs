@@ -9,7 +9,7 @@ namespace DaFuWeng
             int turns = 2;                    //回合数
             Console.WriteLine("请输入参与人数（最多8人）");
             int num = Convert.ToInt32(Console.ReadLine());
-            Map map = new Map(num);
+            Map map = new Map(num,turns);
             Console.WriteLine("\n游戏开始");
 
             for (int n = 1; n <= turns; n++)

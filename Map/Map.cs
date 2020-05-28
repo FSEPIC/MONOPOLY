@@ -10,15 +10,16 @@ namespace DaFuWeng
         public int Turns { set; get; }//回合数
         public Player[] p = new Player[8];
         Event e = new Event();
-        public Map(int num)
+        public Map(int num,int t)
         {
             PlayerNum = num;
+            Turns = t;
             for (int i = 0; i < num; i++)//i:玩家号
             {
-                p[i] = new Player(i,Turns);
+                p[i] = new Player(i);
+                p[i].Turn = Turns;
             }
         }
-
         //前进
         public void LocationUP(int n, int i)
         {
@@ -36,7 +37,16 @@ namespace DaFuWeng
         {
             Random rd = new Random();
             int n = rd.Next(1, 6);
-            Console.WriteLine("获得点数为：" + n);
+            if (p[i].Turn == 0)
+            {
+                n = 0;
+                Console.WriteLine("回合已用完");
+            }
+            else
+            {
+                Console.WriteLine("获得点数为：" + n);
+                p[i].Turn--;
+            }
             LocationUP(n, i);
         }
         //事件
@@ -47,7 +57,6 @@ namespace DaFuWeng
         //报告位置
         public int GetLocation(int i)
         {
-         //   Console.WriteLine("目前位置为：" + p[i].Location);
             return p[i].Location;
         }
         public void ShowProperty(int i)

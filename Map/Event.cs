@@ -24,20 +24,17 @@ namespace DaFuWeng
                 case 20:
                     SelfEvent(m, i);
                     break;
-                case 20:
+                case 25:
                     SelfEvent(m, i);
                     break;
-                case 20:
+                case 29:
                     SelfEvent(m, i);
                     break;
-                case 20:
+                case 34:
                     SelfEvent(m, i);
                     break;
-                case 20:
+                case 36:
                     SelfEvent(m, i);
-                    break;
-                case 13:
-                    AllEvent(m);
                     break;
                 default:
                     //
@@ -47,7 +44,8 @@ namespace DaFuWeng
         //个人事件卡池
         public void SelfEvent(Map m, int i)
         {
-            Random n = new Random(1, 6);
+            Random random = new Random();
+            int n = random.Next(1, 6);
             switch (n)
             {
                 case 1:
@@ -75,7 +73,8 @@ namespace DaFuWeng
         //公共事件卡池
         public void AllEvent(Map m)
         {
-            Random n = new Random(1, 5);
+            Random random = new Random();
+            int n = random.Next(1, 5);
             switch (n)
             {
                 case 1:
@@ -90,7 +89,7 @@ namespace DaFuWeng
                 case 4:
                     allEvent4(m);
                     break;
-                case 4:
+                case 5:
                     allEvent5(m);
                     break;
                 default:
@@ -102,13 +101,13 @@ namespace DaFuWeng
         //个人事件
         static void Event1(Map m, int i)
         {
-            Console.WriteLine("获得事件：路上遇到老司机带，前进3格");
+            Console.WriteLine("获得事件：路上遇到老司机带，逮虾户，加3步");
             m.LocationUP(3, i);
         }
         static void Event2(Map m, int i)
         {
             Console.WriteLine("获得事件：喝下昏睡红茶，暂停1回合");
-            m.p[i].Pause += parameter;
+            m.p[i].Turn += -1;
         }
         static void Event3(Map m, int i)
         {
@@ -138,7 +137,7 @@ namespace DaFuWeng
         //公共事件
         public void allEvent1(Map m)     //所有玩家后退两个格子
         {
-            Console.WriteLine("获得事件：选课系统崩溃，集体选课失败");
+            Console.WriteLine("获得事件：选课系统崩溃，集体选课失败，服务器退档");
             for (int i = 0; i < m.PlayerNum; i++)
             {
                 if (m.p[i].Health > 0)

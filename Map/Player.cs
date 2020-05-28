@@ -15,14 +15,13 @@ namespace DaFuWeng
         public int Money { set; get; }   //金钱
         public int Health { set; get; }  //健康值，最大值为100
         public int Grade { set; get; }   //成绩，最大值为750
-        public Player(int i,int t)
+        public Player(int i)
         {
             Id = i;
             Name = "玩家"+(i+1);
             Location = 0;
             Health = 100;
             Money = 500;
-            Turn = t;
         }
         public string property() {
             return Name + "\n到达位置" + Location  + "\n成绩" + Grade + "\n健康值" + Health + "\n剩余金钱" + Money ;
