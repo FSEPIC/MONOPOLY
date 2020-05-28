@@ -9,3 +9,8 @@ D:\Visual Studio 2019\大作业\Player\bin\Debug\netcoreapp3.1\Player.dll
 D:\Visual Studio 2019\大作业\Player\bin\Debug\netcoreapp3.1\Player.pdb
 D:\Visual Studio 2019\大作业\Player\obj\Debug\netcoreapp3.1\Player.dll
 D:\Visual Studio 2019\大作业\Player\obj\Debug\netcoreapp3.1\Player.pdb
+D:\Visual Studio 2019\大作业\MONOPOLY\ysx\Player\obj\Debug\netcoreapp3.1\Player.csprojAssemblyReference.cache
+D:\Visual Studio 2019\大作业\MONOPOLY\ysx\Player\obj\Debug\netcoreapp3.1\Player.AssemblyInfoInputs.cache
+D:\Visual Studio 2019\大作业\MONOPOLY\ysx\Player\obj\Debug\netcoreapp3.1\Player.AssemblyInfo.cs
+D:\Visual Studio 2019\大作业\MONOPOLY\ysx\Player\obj\Debug\netcoreapp3.1\Player.dll
+D:\Visual Studio 2019\大作业\MONOPOLY\ysx\Player\obj\Debug\netcoreapp3.1\Player.pdb

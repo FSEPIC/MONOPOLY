@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Visual Studio 2019\\大作业\\Player\\Player.csproj": {}
+    "D:\\Visual Studio 2019\\大作业\\MONOPOLY\\ysx\\Player\\Player.csproj": {}
   },
   "projects": {
-    "D:\\Visual Studio 2019\\大作业\\Player\\Player.csproj": {
+    "D:\\Visual Studio 2019\\大作业\\MONOPOLY\\ysx\\Player\\Player.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Visual Studio 2019\\大作业\\Player\\Player.csproj",
+        "projectUniqueName": "D:\\Visual Studio 2019\\大作业\\MONOPOLY\\ysx\\Player\\Player.csproj",
         "projectName": "Player",
-        "projectPath": "D:\\Visual Studio 2019\\大作业\\Player\\Player.csproj",
+        "projectPath": "D:\\Visual Studio 2019\\大作业\\MONOPOLY\\ysx\\Player\\Player.csproj",
         "packagesPath": "C:\\Users\\秋风清灬欢欢\\.nuget\\packages\\",
-        "outputPath": "D:\\Visual Studio 2019\\大作业\\Player\\obj\\",
+        "outputPath": "D:\\Visual Studio 2019\\大作业\\MONOPOLY\\ysx\\Player\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\秋风清灬欢欢\\AppData\\Roaming\\NuGet\\NuGet.Config",
