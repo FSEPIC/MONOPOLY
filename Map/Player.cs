@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+//完成人：闫顺兴
 namespace DaFuWeng
 {
 
@@ -28,5 +28,5 @@ namespace DaFuWeng
             return Name + "\n到达位置" + Location  + "\n成绩" + Grade + "\n健康值" + Health + "\n剩余金钱" + Money ;
         }
     }
-    
 }
+//完成人：闫顺兴

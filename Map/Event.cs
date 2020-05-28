@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+//完成人：徐明睿
 namespace DaFuWeng
 {
     public class Event
@@ -97,7 +97,8 @@ namespace DaFuWeng
                     break;
             }
         }
-
+//完成人：徐明睿
+//完成人：王浩欢
         //个人事件
         static void Event1(Map m, int i)
         {
@@ -132,7 +133,8 @@ namespace DaFuWeng
             m.p[i].Health += -5;
             m.p[i].Grade += -25;
         }
-
+//完成人：王浩欢
+//完成人：闫顺兴
         //公共事件
         public void allEvent1(Map m)     //所有玩家后退两个格子
         {
@@ -221,5 +223,6 @@ namespace DaFuWeng
                 }
             }
         }
+//完成人：闫顺兴
     }
 }
