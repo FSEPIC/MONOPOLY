@@ -4,44 +4,114 @@ using System.Text;
 //完成人：徐明睿
 namespace DaFuWeng
 {
-    public class Event
+
+    public class AllEvent
     {
+        public int changeLocation { get; set; }
+        public int changePause { set; get; }
+        public int changeMoney { set; get; }
+        public int changeHealth { set; get; }
+        public int changeGrade { set; get; }
+        public string eventStr { get; set; }
         //事件格子
-        public void doEvent(Map m, int i)
+        public AllEvent() { }
+        public AllEvent(int l, int p, int m, int h, int g, string s)
         {
-            int n = m.GetLocation(i);//n是格子号
-            switch (n)
+            changeLocation = l;
+            changeGrade = g;
+            changeMoney = m;
+            changeHealth = h;
+            changePause = p;
+            eventStr = s;
+        }
+
+        public void doEvent(Player p,Map m)
+        {
+            int n = p.Location;//n是格子号   
+            if (n == 3 || n == 6 || n == 9 || n == 12 || n == 20)
             {
-                case 4:
-                    SelfEvent(m, i);
-                    break;
-                case 8:
-                    SelfEvent(m, i);
-                    break;
-                case 13:
-                    AllEvent(m);
-                    break;
-                case 20:
-                    SelfEvent(m, i);
-                    break;
-                case 25:
-                    SelfEvent(m, i);
-                    break;
-                case 29:
-                    SelfEvent(m, i);
-                    break;
-                case 34:
-                    SelfEvent(m, i);
-                    break;
-                case 36:
-                    SelfEvent(m, i);
-                    break;
-                default:
-                    //
-                    break;
+
+                Console.WriteLine(eventStr);
+                for(int i=0;i< m.PlayerNum; i++)
+                {
+                    m.p[i].Location += changeLocation;
+                    m.p[i].Pause += changePause;
+                    m.p[i].Money += changeMoney;
+                    m.p[i].Health += changeHealth;
+                    m.p[i].Grade += changeGrade;
+                    Console.WriteLine(m.p[i].Name +"位置"+ m.p[i].Location);
+                }
+
             }
         }
-        //个人事件卡池
+    }
+    public class Event
+    {
+        public int changeLocation { get; set; }
+        public int changePause { set; get; }   
+        public int changeMoney { set; get; }   
+        public int changeHealth { set; get; }  
+        public int changeGrade { set; get; }  
+        public string eventStr { get; set; }
+        //事件格子
+        public Event() { }
+        public Event(int l,int p,int m,int h,int g,string s)
+        {
+            changeLocation = l;
+            changeGrade = g;
+            changeMoney = m;
+            changeHealth = h;
+            changePause = p;
+            eventStr = s;
+        }
+
+        public void doEvent(Player p)
+        {          
+            int n = p.Location;//n是格子号   
+            if (n == 2 || n == 4 || n == 8 || n == 16 || n == 24)
+            {
+                Console.WriteLine(eventStr);
+                p.Location += changeLocation;
+                p.Pause += changePause;
+                p.Money += changeMoney;
+                p.Health += changeHealth;
+                p.Grade += changeGrade;
+                Console.WriteLine("目前位置为：" + p.Location);
+            }
+
+           /*int n = m.GetLocation(i);//n是格子号
+           switch (n)
+           {
+               case 4:
+                   SelfEvent(m, i);
+                   break;
+               case 8:
+                   SelfEvent(m, i);
+                   break;
+               case 13:
+                   AllEvent(m);
+                   break;
+               case 20:
+                   SelfEvent(m, i);
+                   break;
+               case 25:
+                   SelfEvent(m, i);
+                   break;
+               case 29:
+                   SelfEvent(m, i);
+                   break;
+               case 34:
+                   SelfEvent(m, i);
+                   break;
+               case 36:
+                   SelfEvent(m, i);
+                   break;
+               default:
+                   //
+                   break;*/
+        }
+    }
+        /*//个人事件卡池
         public void SelfEvent(Map m, int i)
         {
             Random random = new Random();
@@ -221,7 +291,7 @@ namespace DaFuWeng
                     }
                 }
             }
-        }
-//完成人：闫顺兴
+        }*/
+        //完成人：闫顺兴
     }
-}
+

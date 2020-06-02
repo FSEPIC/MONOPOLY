@@ -22,6 +22,7 @@ namespace DaFuWeng
             Location = 0;
             Health = 100;
             Money = 500;
+            Pause = 0;
         }
         public string property() {
             return Name + "\n到达位置" + Location  + "\n成绩" + Grade + "\n健康值" + Health + "\n剩余金钱" + Money ;

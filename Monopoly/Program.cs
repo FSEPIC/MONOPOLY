@@ -19,7 +19,7 @@ namespace DaFuWeng
                 {
                     Console.WriteLine("玩家" + (i + 1));
                     map.Run(i);
-                    map.GetEvent(i);
+                    map.getEvent(i);
                 }
             }
 
