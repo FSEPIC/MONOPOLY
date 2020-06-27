@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MIANGAME.unity
     guid: 8dbfcc1f1ea013542b90fee04625e62d
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: f9340e9f90483a64590ac14a257fb601
   m_configObjects: {}

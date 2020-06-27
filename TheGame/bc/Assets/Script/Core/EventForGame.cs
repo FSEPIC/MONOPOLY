@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Globalization;
-
+using System;
 
 public class AllEventForGame
 {
@@ -11,7 +11,6 @@ public class AllEventForGame
     public int changeGrade { set; get; }    //成绩改变
     public string eventStr { get; set; }    //此次事件的名称
     //事件格子
-    public AllEventForGame() { }
     public AllEventForGame(int m, int h, int g, string s)  //金钱，健康，成绩，事件名
     {
         changeMoney = m;
@@ -83,9 +82,10 @@ public class IndividualEventForGame : MonoBehaviour
         teleportLocation = t;//要是没有传送就写负一好了
         eventStr = s;
     }
-    public void doEvent(PlayerForGame p)
+    
+     public void doEvent(PlayerForGame p)
     {
-        int n = p.Location;//n是格子号   这里可以废弃了
+        //int n = p.Location;//n是格子号   这里可以废弃了
         //Console.WriteLine(eventStr);
         p.Location += changeLocation;
         p.Pause += changePause;
@@ -107,15 +107,18 @@ public class IndividualEventForGame : MonoBehaviour
         }
         if (0 <= teleportLocation && teleportLocation <= 35) p.Location = teleportLocation;//增加了一个传送事件，传送优先于在走步
         if (p.Location > 35) p.Location -= 36;//修正坐标
+        return;
 
         //Console.WriteLine("目前位置为：" + p.Location);
         
     }
 }
+    
+
 //个体事件：完成人：徐明睿、王浩欢
         //事件格子
         //完成人：徐明睿
-        /*public void doEvent(MapForGame m, int i)
+        /*void doEvent(MapForGame m, int i)
             {
                 int n = m.GetLocation(i);//n是格子号
                 switch (n)
@@ -145,12 +148,13 @@ public class IndividualEventForGame : MonoBehaviour
                         SelfEvent(m, i);
                         break;
                     default:
-                        //
+                        
                         break;
                 }
             }
+            
             //个人事件卡池
-            public void SelfEvent(MapForGame m, int i)
+            void SelfEvent(MapForGame m, int i)
             {
                 System.Random random = new System.Random();
                 int n = random.Next(1, 6);
@@ -179,7 +183,7 @@ public class IndividualEventForGame : MonoBehaviour
                 }
             }
             //公共事件卡池
-            public void AllEventForGame(MapForGame m)
+            void AllEventForGame(MapForGame m)
             {
                 System.Random random = new System.Random();
                 int n = random.Next(1, 5);
@@ -209,43 +213,44 @@ public class IndividualEventForGame : MonoBehaviour
             //个人事件
             static void Event1(MapForGame m, int i)
             {
-                //Console.WriteLine("获得事件：路上遇到老司机带，逮虾户，加3步");
+                Console.WriteLine("获得事件：路上遇到老司机带，逮虾户，加3步");
                 m.LocationUP(3, i);
             }
             static void Event2(MapForGame m, int i)
             {
-                //Console.WriteLine("获得事件：喝下昏睡红茶，暂停1回合");
-                m.p[i].isPause = true;
+                Console.WriteLine("获得事件：喝下昏睡红茶，暂停1回合");
+                m.p[i].Pause = true;
             }
             static void Event3(MapForGame m, int i)
             {
-                //Console.WriteLine("获得事件：路上捡到钱，金钱加300");
+                Console.WriteLine("获得事件：路上捡到钱，金钱加300");
                 m.p[i].Money += 300;
             }
             static void Event4(MapForGame m, int i)
             {
-                //Console.WriteLine("获得事件：换上感冒，健康-5，金钱-100");
+                Console.WriteLine("获得事件：换上感冒，健康-5，金钱-100");
                 m.p[i].Health += -5;
                 m.p[i].Money += -100;
             }
             static void Event5(MapForGame m, int i)
             {
-               // Console.WriteLine("获得事件：被同学拖去健身，健康+10，金钱-500");
+               Console.WriteLine("获得事件：被同学拖去健身，健康+10，金钱-500");
                 m.p[i].Health += 10;
                 m.p[i].Money += -500;
             }
             static void Event6(MapForGame m, int i)
             {
-                //Console.WriteLine("获得事件：沉迷网游，无法自拔，健康-5，成绩-25");
+                Console.WriteLine("获得事件：沉迷网游，无法自拔，健康-5，成绩-25");
                 m.p[i].Health += -5;
                 m.p[i].Grade += -25;
             }
+            
     //完成人：王浩欢
     //完成人：闫顺兴
             //公共事件
-            public void allEvent1(MapForGame m)     //所有玩家后退两个格子
+            void allEvent1(MapForGame m)     //所有玩家后退两个格子
             {
-                //Console.WriteLine("获得事件：选课系统崩溃，集体选课失败，服务器退档");
+                Console.WriteLine("获得事件：选课系统崩溃，集体选课失败，服务器退档");
                 for (int i = 0; i < m.PlayerNum; i++)
                 {
                     if (m.p[i].Health > 0)
@@ -254,9 +259,9 @@ public class IndividualEventForGame : MonoBehaviour
                     }
                 }
             }
-            public void allEvent2(MapForGame m)     //所有玩家健康值降低10点
+            void allEvent2(MapForGame m)     //所有玩家健康值降低10点
             {
-                //Console.WriteLine("获得事件：食堂吃出奥力给，集体拉肚子");
+                Console.WriteLine("获得事件：食堂吃出奥力给，集体拉肚子");
                 for (int i = 0; i < m.PlayerNum; i++)
                 {
                     if (m.p[i].Health > 0)
@@ -272,9 +277,9 @@ public class IndividualEventForGame : MonoBehaviour
                     }
                 }
             }
-            public void allEvent3(MapForGame m)    //根据成绩排名对玩家进行奖励与惩罚
+            void allEvent3(MapForGame m)    //根据成绩排名对玩家进行奖励与惩罚
             {
-                //Console.WriteLine("获得事件：学院对学生的成绩进行奖励");
+                Console.WriteLine("获得事件：学院对学生的成绩进行奖励");
                 for (int i = 0; i < m.PlayerNum; i++)
                 {
                     if (m.p[i].Health > 0)
@@ -300,9 +305,9 @@ public class IndividualEventForGame : MonoBehaviour
                     }
                 }
             }
-            public void allEvent4(MapForGame m)     //考试之后，所有玩家的成绩增加50
+            void allEvent4(MapForGame m)     //考试之后，所有玩家的成绩增加50
             {
-                //Console.WriteLine("获得事件：期末大考");
+                Console.WriteLine("获得事件：期末大考");
                 for (int i = 0; i < m.PlayerNum; i++)
                 {
                     if (m.p[i].Health > 0)
@@ -315,9 +320,9 @@ public class IndividualEventForGame : MonoBehaviour
                     }
                 }
             }
-            public void allEvent5(MapForGame m)       //体检之后，玩家健康值提升20点
+            void allEvent5(MapForGame m)       //体检之后，玩家健康值提升20点
             {
-                //Console.WriteLine("获得事件：漂亮的护士小姐姐来体检");
+                Console.WriteLine("获得事件：漂亮的护士小姐姐来体检");
                 for (int i = 0; i < m.PlayerNum; i++)
                 {
                     if (m.p[i].Health > 0)
@@ -330,6 +335,7 @@ public class IndividualEventForGame : MonoBehaviour
                     }
                 }
             }
+            
     //完成人：闫顺兴
         // Start is called before the first frame update
         void Start()
@@ -341,4 +347,7 @@ public class IndividualEventForGame : MonoBehaviour
         void Update()
         {
 
-        }*/
+        }
+
+        
+}*/

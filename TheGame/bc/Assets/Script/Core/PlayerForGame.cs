@@ -22,6 +22,7 @@ public class PlayerForGame : MonoBehaviour
     public string property() {
         return Name + "\n到达位置" + Location  + "\n成绩" + Grade + "\n健康值" + Health + "\n剩余金钱" + Money ;
     }
+
     // Start is called before the first frame update
     void Start()
     {
