@@ -85,8 +85,6 @@ public class IndividualEventForGame : MonoBehaviour
     
      public void doEvent(PlayerForGame p)
     {
-        //int n = p.Location;//n是格子号   这里可以废弃了
-        //Console.WriteLine(eventStr);
         p.Location += changeLocation;
         p.Pause += changePause;
         p.Money += changeMoney;
@@ -107,10 +105,7 @@ public class IndividualEventForGame : MonoBehaviour
         }
         if (0 <= teleportLocation && teleportLocation <= 35) p.Location = teleportLocation;//增加了一个传送事件，传送优先于在走步
         if (p.Location > 35) p.Location -= 36;//修正坐标
-        return;
-
-        //Console.WriteLine("目前位置为：" + p.Location);
-        
+        return;       
     }
 }
     
