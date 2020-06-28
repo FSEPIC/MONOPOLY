@@ -87,11 +87,12 @@ public class MapForGame : MonoBehaviour
             return "群体事件:" + this.ae[n].eventStr;
         }
         return null;
-        //if (x == 10) {this.clinic.doEvent(this.p[i]);}
+
+    }      
+    //if (x == 10) {this.clinic.doEvent(this.p[i]);}
         //if (x == 18) {this.teachingBuilding.doEvent(this.p[i]);}
         //if (x == 27) {this.tutorialSchool.doEvent(this.p[i]);}
         //if (x == 0) {this.startPoint.doEvent(this.p[i]);}
-    }
     //前进
     public void LocationUP(int n, int i)
     {
