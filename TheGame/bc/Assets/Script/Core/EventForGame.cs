@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Globalization;
 using System;
-
+//徐明睿、王浩欢
 public class AllEventForGame
 {
     public int changeMoney { set; get; }    //金钱改动
