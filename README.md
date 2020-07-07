@@ -159,3 +159,10 @@
 结算界面：
 
 ![img](file:////Users/epicfs/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image018.jpg)
+
+## 5.基本代码分工
+闫顺兴：事件触发与执行逻辑程序
+张文喆：地图设计、事件触发执行与UI逻辑行为绑定
+陈威：逻辑与UI绑定、UI逻辑行为实现
+徐明睿：事件触发与执行逻辑程序
+王浩欢：事件触发与执行逻辑程序
